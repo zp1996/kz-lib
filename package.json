@@ -1,0 +1,38 @@
+{
+  "name": "kz-lib",
+  "version": "1.0.6",
+  "description": "webpack dll(react,react-dom,redux,react-redux,redux-thunk)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev && npm run prod",
+    "dev": "NODE_ENV=development webpack",
+    "prod": "NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zp1996/kz-lib.git"
+  },
+  "keywords": [
+    "webpack",
+    "dll"
+  ],
+  "author": "zp1996",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zp1996/kz-lib/issues"
+  },
+  "homepage": "https://github.com/zp1996/kz-lib#readme",
+  "devDependencies": {
+    "uglify-js": "^2.7.5",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "pure-render-decorator": "^1.2.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  }
+}
