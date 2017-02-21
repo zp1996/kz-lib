@@ -1,6 +1,6 @@
 {
   "name": "kz-lib",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "webpack dll(react,react-dom,redux,react-redux,redux-thunk)",
   "main": "index.js",
   "scripts": {
