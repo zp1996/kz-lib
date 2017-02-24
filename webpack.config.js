@@ -2,7 +2,8 @@ const webpack = require('webpack'),
     path = require('path'),
     SupportAMDPlugin = require('./SupportAMDPlugin'),
     { exec } = require('child_process'),
-    dir = process.env.NODE_ENV === 'production' ? 'prod' : 'dev',
+    { argv: { env } } = require('optimist'),
+    dir = env === 'production' ? 'prod' : 'dev',
     outputPath = path.join(__dirname, 'lib', dir); 
 
 exec(`rm -rf ./lib/${dir}`);
@@ -31,7 +32,7 @@ module.exports = {
             path: path.join(outputPath, 'manifest.json')
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+            'process.env.NODE_ENV': JSON.stringify(env || 'development')
         }),
         new SupportAMDPlugin({
             deps: lib,

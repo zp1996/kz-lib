@@ -43,9 +43,15 @@ class SupportAMDPlugin {
 
             key = Object.keys(assets).filter(val => fileRE.test(val))[0];
 
-            let js = 'var lib = {};\nObject.defineProperties(lib, {\n';
+            let js = 'var lib = {};\nObject.defineProperties(lib, {\n',
+                getPath = val => (
+                    (
+                        content[val.path] || 
+                        val.path.replace(/\.\/node_modules/, str => '..')
+                    ).id
+                );          
             lib.forEach(val => {
-                val.path = content[val.path].id;
+                val.path = getPath(val);
                 js += `'${val.name}': {
                         get: function() {
                             return ${val.path};
